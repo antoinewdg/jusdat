@@ -38,3 +38,6 @@ class CommaSeparatedQuery(Query):
 
     def generate(self):
         return self.prefix + ' ' + ', '.join(self._args)
+
+
+sql = Query()
