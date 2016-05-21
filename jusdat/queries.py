@@ -37,7 +37,8 @@ class CommaSeparatedQuery(Query):
         self._args = args
 
     def generate(self):
-        return self.prefix + ' ' + ', '.join(self._args)
+        result = self.prefix + ' ' + ', '.join((str(arg) for arg in self._args))
+        return result
 
 
 sql = Query()

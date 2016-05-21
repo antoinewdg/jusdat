@@ -19,3 +19,10 @@ def test_chaining_on_custom_query():
 def test_multiple_chaining():
     query = sql.select('color').from_('car')
     assert str(query) == 'SELECT color FROM car'
+
+
+def test():
+    from jusdat import Table
+    car = Table('car')
+    print(car._name)
+    print(sql.select(car.color, car.s))

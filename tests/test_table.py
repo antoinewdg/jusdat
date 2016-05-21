@@ -20,9 +20,9 @@ def test_column_handling():
 
 def test_column_handling_with_name_conflict():
     table = Table('car')
-    name = table.name
-    column = table.c.name
+    name = table._name
+    column = table.c._name
 
     assert type(name) != Column
     assert type(column) == Column
-    assert column.name == 'name'
+    assert column.name == '_name'
