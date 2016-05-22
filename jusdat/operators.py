@@ -11,7 +11,11 @@ class OperableMixin:
     def __add__(self, other):
         return BinaryOperator(self, '+', other)
 
-        # def __neg__(self):
+    def __sub__(self, other):
+        return BinaryOperator(self, '-', other)
+
+    def __neg__(self):
+        return UnaryOperator('-', self)
 
 
 class Operator(NeedsParenthesisMixin):

@@ -32,3 +32,15 @@ def test_addition_operator():
     a = MockOperable()
     operator = a + a
     assert str(operator) == 'a + a'
+
+
+def test_substraction_operator():
+    a = MockOperable()
+    operator = a - a
+    assert str(operator) == 'a - a'
+
+
+def test_negation_operator():
+    a = MockOperable()
+    operator = -a
+    assert str(operator) == '-a'
