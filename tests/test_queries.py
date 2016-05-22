@@ -26,3 +26,14 @@ def test():
     car = Table('car')
     print(car._name)
     print(sql.select(car.color, car.s))
+
+
+def test_and_query():
+    query = sql.and_('a', 'b')
+    assert str(query) == 'a AND b'
+
+
+def test_or_query():
+    query = sql.or_('a', 'b')
+    assert str(query) == 'a OR b'
+

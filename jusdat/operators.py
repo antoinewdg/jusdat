@@ -6,7 +6,11 @@ class OperableMixin:
         return BinaryOperator(self, '!=', other)
 
 
-class BinaryOperator:
+class Operator:
+    pass
+
+
+class BinaryOperator(Operator, OperableMixin):
     def __init__(self, left, op, right):
         self.left = left
         self.right = right
