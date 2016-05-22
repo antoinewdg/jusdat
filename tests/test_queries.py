@@ -37,3 +37,7 @@ def test_or_query():
     query = sql.or_('a', 'b')
     assert str(query) == 'a OR b'
 
+
+def test_parenthesis():
+    query = sql.or_('a', sql.and_('b', 'c'))
+    assert str(query) == 'a OR (b AND c)'

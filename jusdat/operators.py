@@ -1,3 +1,6 @@
+from .parenthesis_rules import NeedsParenthesisMixin
+
+
 class OperableMixin:
     def __eq__(self, other):
         return BinaryOperator(self, '=', other)
@@ -6,7 +9,7 @@ class OperableMixin:
         return BinaryOperator(self, '!=', other)
 
 
-class Operator:
+class Operator(NeedsParenthesisMixin):
     pass
 
 

@@ -1,4 +1,7 @@
-class Query:
+from .parenthesis_rules import NeedsParenthesisMixin
+
+
+class Query(NeedsParenthesisMixin):
     def __init__(self):
         self._parent = None
 
@@ -47,7 +50,10 @@ class SeparatedQuery(Query):
         result = ''
         if self.prefix is not None:
             result += self.prefix + ' '
-        result += self.separator.join(str(arg) for arg in self._args)
+        string_arguments = \
+            ['(' + str(arg) + ')' if isinstance(arg, NeedsParenthesisMixin)
+             else str(arg) for arg in self._args]
+        result += self.separator.join(string_arguments)
 
         return result
 
